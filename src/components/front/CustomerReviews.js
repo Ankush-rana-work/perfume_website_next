@@ -55,9 +55,8 @@ const CustomerReviews = () => {
                                     <FaQuoteLeft className="mdi mdi-format-quote-open text-9xl opacity-5" ></FaQuoteLeft>
                                 </div>
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " Cartzio made the processes so easy. Cartzio instantly increased
-                                    the amount of interest and ultimately saved us over $10,000. "{" "}
+                                   Cartzio made the processes so easy. Cartzio instantly increased
+                                    the amount of interest and ultimately saved us over $10,000.
                                 </p>
                                 <div className="absolute bottom-28 md:-end-24 -end-0">
                                     <FaQuoteRight className="mdi mdi-format-quote-close text-9xl opacity-5"></FaQuoteRight>
@@ -94,10 +93,10 @@ const CustomerReviews = () => {
                         <div className="tiny-slide">
                             <div className="text-center">
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " I highly recommend Cartzio as the new way to sell your home "by
-                                    owner". My home sold in 24 hours for the asking price. Best $400
-                                    you could spend to sell your home. "{" "}
+                                    
+                                    I highly recommend Cartzio as the new way to sell your home by
+                                    owner. My home sold in 24 hours for the asking price. Best $400
+                                    you could spend to sell your home.
                                 </p>
                                 <div className="text-center mt-5">
                                     <ul className="text-xl font-medium text-amber-400 list-none mb-2">
@@ -130,10 +129,9 @@ const CustomerReviews = () => {
                         <div className="tiny-slide">
                             <div className="text-center">
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " My favorite part about selling my home myself was that we got to
+                                    My favorite part about selling my home myself was that we got to
                                     meet and get to know the people personally. This made it so much
-                                    more enjoyable! "{" "}
+                                    more enjoyable! 
                                 </p>
                                 <div className="text-center mt-5">
                                     <ul className="text-xl font-medium text-amber-400 list-none mb-2">
@@ -166,8 +164,7 @@ const CustomerReviews = () => {
                         <div className="tiny-slide">
                             <div className="text-center">
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " Great experience all around! Easy to use and efficient. "{" "}
+                                    Great experience all around! Easy to use and efficient.
                                 </p>
                                 <div className="text-center mt-5">
                                     <ul className="text-xl font-medium text-amber-400 list-none mb-2">
@@ -200,9 +197,8 @@ const CustomerReviews = () => {
                         <div className="tiny-slide">
                             <div className="text-center">
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " Cartzio made selling my home easy and stress free. They went
-                                    above and beyond what is expected. "{" "}
+                                    Cartzio made selling my home easy and stress free. They went
+                                    above and beyond what is expected.
                                 </p>
                                 <div className="text-center mt-5">
                                     <ul className="text-xl font-medium text-amber-400 list-none mb-2">
@@ -235,9 +231,8 @@ const CustomerReviews = () => {
                         <div className="tiny-slide">
                             <div className="text-center">
                                 <p className="text-lg text-slate-400 italic">
-                                    {" "}
-                                    " Cartzio is fair priced, quick to respond, and easy to use. I
-                                    highly recommend their services! "{" "}
+                                    Cartzio is fair priced, quick to respond, and easy to use. I
+                                    highly recommend their services!
                                 </p>
                                 <div className="text-center mt-5">
                                     <ul className="text-xl font-medium text-amber-400 list-none mb-2">

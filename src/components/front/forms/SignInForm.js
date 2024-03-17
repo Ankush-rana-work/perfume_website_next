@@ -98,8 +98,8 @@ const SignInForm = () => {
                         </div>
                         <div className="text-center">
                             <span className="text-slate-400 me-2">
-                                Don't have an account ?
-                            </span>{" "}
+                                {`Don't have an account ?`}
+                            </span>
                             <Link
                                 className="text-black dark:text-white font-bold inline-block"
                                 href="/signup">

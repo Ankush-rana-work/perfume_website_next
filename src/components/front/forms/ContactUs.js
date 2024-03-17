@@ -2,6 +2,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { contactUsSchema } from '../../../../validation/contactUsSchema';
+import { loginActions } from '../../../../lib/serverActions/authActions';
 
 const ContactUs = () => {
     const initialValues = {
@@ -12,9 +13,18 @@ const ContactUs = () => {
     };
 
     const [disable, setDisable] = useState(true);
+    const [userdata, setUserData] = useState(null);
 
     useEffect(() => {
-        setDisable(false);
+        const fetchData = async () => {
+            const data = await loginActions();
+            console.log('dataeee',data);
+            setUserData(data);
+            setDisable(false);
+        };
+
+        fetchData();
+
     }, []);
 
     const handleSubmit = (data) => {
@@ -34,7 +44,7 @@ const ContactUs = () => {
                     <div className="grid lg:grid-cols-12 grid-cols-1 gap-3">
                         <div className="lg:col-span-6">
                             <label htmlFor="name" className="font-semibold">
-                                Your Name:
+                                Your Name: 
                             </label>
                             <Field
                                 name="name"

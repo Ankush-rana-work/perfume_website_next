@@ -43,8 +43,8 @@ const CartListDropdown = () => {
                             className="flex items-center justify-between py-1.5 px-4"
                         >
                             <span className="flex items-center">
-                                <img
-                                    src="assets/images/shop/trendy-shirt.jpg"
+                                <Image
+                                    src={luxuriousBag2}
                                     className="rounded shadow dark:shadow-gray-800 w-9"
                                     alt=""
                                 />
@@ -64,7 +64,7 @@ const CartListDropdown = () => {
                             className="flex items-center justify-between py-1.5 px-4"
                         >
                             <span className="flex items-center">
-                                <img
+                                <Image
                                     src={luxuriousBag2}
                                     className="rounded shadow dark:shadow-gray-800 w-9"
                                     alt=""

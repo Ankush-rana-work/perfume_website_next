@@ -26,12 +26,14 @@ const Header = (prop) => {
                             src={logoDark}
                             width={114}
                             height={22}
+                            alt="description of image"
                         />
                         <Image
                             className="h-[22px] hidden dark:inline-block"
                             src={logoWhite}
                             width={114}
                             height={22}
+                            alt="description of image"
                         />
                     </div>
                 </a>

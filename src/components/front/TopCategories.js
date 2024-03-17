@@ -25,7 +25,7 @@ const TopCategories = () => {
                         src={mensWare}
                         alt=""
                     />
-                    <span className="text-xl font-medium mt-3 block">Men's Wear</span>
+                    <span className="text-xl font-medium mt-3 block">{`Men's Wear`}</span>
                 </a>
                 <a href="#" className="text-center hover:text-orange-500">
                     <Image

@@ -3,7 +3,6 @@ import loginImage from '../../../../../public/images/login.jpg';
 import logoDark from '../../../../../public/images/logo-dark.png';
 import logoLight from '../../../../../public/images/logo-light.png';
 import Image from 'next/image';
-import Link from 'next/link';
 import SignInForm from '@/components/front/forms/SignInForm';
 
 const SignIn = () => {
@@ -25,12 +24,12 @@ const SignIn = () => {
                 <div className="p-8 lg:px-20">
                   <div className="text-center">
                     <a href="index.html">
-                      <img
+                      <Image
                         src={logoDark}
                         className="mx-auto block dark:hidden"
                         alt=""
                       />
-                      <img
+                      <Image
                         src={logoLight}
                         className="mx-auto hidden dark:block"
                         alt=""

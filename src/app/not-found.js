@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function NotFound() {
+
   return (
     <>
       <body className="dark:bg-slate-900">
@@ -32,7 +33,7 @@ export default async function NotFound() {
                   </h1>
                   <p className="text-slate-400">
                     Whoops, this is embarassing. <br /> Looks like the page you were
-                    looking for wasn't found.
+                    looking for wasnt found.
                   </p>
                   <div className="mt-4">
                     <Link href="/"

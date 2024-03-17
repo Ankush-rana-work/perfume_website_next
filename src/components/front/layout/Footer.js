@@ -7,7 +7,8 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineContactEmergency } from "react-icons/md";
 import { FaRegMoneyBill1 } from "react-icons/fa6";
 import { RiSecurePaymentLine } from "react-icons/ri";
-
+import logoLight from '../../../../public/images/logo-light.png'; 
+import Image from 'next/image';
 const Footer = () => {
 
     return (
@@ -19,7 +20,10 @@ const Footer = () => {
                             <div className="grid md:grid-cols-12 grid-cols-1 gap-6">
                                 <div className="lg:col-span-3 md:col-span-12">
                                     <a href="#" className="text-[22px] focus:outline-none">
-                                        <img src="assets/images/logo-light.png" alt="" />
+                                        <Image 
+                                        src={logoLight} 
+                                        alt="" 
+                                        />
                                     </a>
                                     <p className="mt-6 text-gray-300">
                                         Upgrade your style with our curated sets. Choose confidence,

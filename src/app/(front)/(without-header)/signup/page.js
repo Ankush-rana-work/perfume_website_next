@@ -24,12 +24,12 @@ const SignUp = () => {
                 <div className="p-8 lg:px-20">
                   <div className="text-center">
                     <a href="index.html">
-                      <img
+                      <Image
                         src={logoDark}
                         className="mx-auto block dark:hidden"
                         alt=""
                       />
-                      <img
+                      <Image
                         src={logoLight}
                         className="mx-auto hidden dark:block"
                         alt=""
