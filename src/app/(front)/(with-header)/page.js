@@ -6,6 +6,7 @@ import CustomerReviews from "@/components/front/CustomerReviews";
 
 
 export default function Home() {
+
   return (
     <>
       <HeroBanner />

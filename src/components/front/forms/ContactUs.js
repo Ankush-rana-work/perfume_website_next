@@ -3,34 +3,28 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { contactUsSchema } from '../../../../validation/contactUsSchema';
 import { loginActions } from '../../../../lib/serverActions/authActions';
+import useSWR from 'swr'
+import { useListQuery } from '../../../../lib/rtk/api/productApi';
 
 const ContactUs = () => {
+    const [pageNo, setPageNo] = useState(1);
     const initialValues = {
         name: '',
         email: '',
         subject: '',
         comment: ''
     };
+    const { data: blogList, error: blogError, isLoading: blogisLoading } = useListQuery({
+        pageNo: pageNo,
+    });
 
-    const [disable, setDisable] = useState(true);
-    const [userdata, setUserData] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await loginActions();
-            console.log('dataeee',data);
-            setUserData(data);
-            setDisable(false);
-        };
-
-        fetchData();
-
-    }, []);
-
+    console.log(blogList);
     const handleSubmit = (data) => {
         console.log(JSON.stringify(data, null, 2));
     }
 
+
+    useListQuery
     return (
         <Formik
             initialValues={initialValues}
@@ -44,7 +38,7 @@ const ContactUs = () => {
                     <div className="grid lg:grid-cols-12 grid-cols-1 gap-3">
                         <div className="lg:col-span-6">
                             <label htmlFor="name" className="font-semibold">
-                                Your Name: 
+                                Your Name:
                             </label>
                             <Field
                                 name="name"
@@ -113,10 +107,10 @@ const ContactUs = () => {
                         type="submit"
                         id="submit"
                         name="send"
-                        className={`py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center text-white rounded-md mt-2 ${disable ? 'bg-gray-300' : 'bg-orange-500'}`}
-                        disabled={disable}
+                        className={`py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center text-white rounded-md mt-2 ${blogisLoading ? 'bg-gray-300' : 'bg-orange-500'}`}
+                        disabled={blogisLoading}
                     >
-                        {`${disable ? 'Loading...' : 'Send Message'}`}
+                        {`${blogisLoading ? 'Loading...' : 'Send Message'}`}
                     </button>
                 </Form>
             )}
