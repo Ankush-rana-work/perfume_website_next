@@ -1,3 +1,4 @@
+import { ReduxProvider } from "../../lib/rtk/ReduxProvider";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="enff">
-      {children}
+      <ReduxProvider>
+        {children}
+      </ReduxProvider>
     </html>
   )
 }
