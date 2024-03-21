@@ -1,5 +1,8 @@
+import { Toaster } from "react-hot-toast";
+import { NextProviders } from "../../lib/providers/sessionProvider";
 import { ReduxProvider } from "../../lib/rtk/ReduxProvider";
 import "./globals.css";
+import { ToasterProvider } from "../../lib/providers/toasterProvider";
 
 export const metadata = {
   title: 'Next.js',
@@ -7,11 +10,16 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="enff">
-      <ReduxProvider>
-        {children}
-      </ReduxProvider>
+      <NextProviders>
+        <ReduxProvider>
+          <ToasterProvider />
+          {children}
+          <ToasterProvider />
+        </ReduxProvider>
+      </NextProviders>
     </html>
   )
 }
