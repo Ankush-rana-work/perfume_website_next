@@ -4,8 +4,14 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { signInSchema } from '../../../../validation/signInSchema';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { Router } from 'next/router';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 const SignInForm = () => {
+    const router = useRouter()
+
     const initialValues = {
         email: '',
         password: ''
@@ -17,17 +23,32 @@ const SignInForm = () => {
         setDisable(false);
     }, []);
 
-    const handleSubmit = (data) => {
-        console.log(JSON.stringify(data, null, 2));
+    const handleSubmit = async (data) => {
+        try {
+            toast.loading('Loading...');
+            console.log(JSON.stringify(data, null, 2));
+            const loginResponse = await signIn("credentials", { username: data.email, password: data.password, redirect: false,});
+            
+            if(loginResponse.ok){
+                toast.dismiss();
+                // Redirect to a specific page after successful sign-in
+                router.push('/');
+            }else{
+                toast.dismiss();
+                toast.error('Invalid user email and password');
+            }
+
+        } catch (error) {
+            // Handle sign-in error
+            console.error('Sign-in failed:', error);
+        }
     }
 
     return (
-
         <Formik
             initialValues={initialValues}
             validationSchema={signInSchema}
             onSubmit={handleSubmit}
-
         >
             {({ errors, touched, resetForm }) => (
                 <Form className="text-start lg:py-20 py-8">

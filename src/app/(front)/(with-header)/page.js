@@ -3,10 +3,13 @@ import TopCategories from "@/components/front/TopCategories";
 import NewArrival from "@/components/front/NewArrival";
 import PopularItem from "@/components/front/PopularItem";
 import CustomerReviews from "@/components/front/CustomerReviews";
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "@/app/api/auth/[...nextauth]/options";
 
 
-export default function Home() {
-
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  
   return (
     <>
       <HeroBanner />
