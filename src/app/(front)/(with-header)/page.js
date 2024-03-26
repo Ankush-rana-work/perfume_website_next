@@ -5,11 +5,12 @@ import PopularItem from "@/components/front/PopularItem";
 import CustomerReviews from "@/components/front/CustomerReviews";
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/app/api/auth/[...nextauth]/options";
+import FeatureProduct from "@/components/front/FeatureProduct";
 
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  
+
   return (
     <>
       <HeroBanner />
@@ -18,10 +19,13 @@ export default async function Home() {
         <TopCategories />
         {/* New arrival */}
         <NewArrival />
+        {/* featured Item */}
+        <FeatureProduct />
         {/* popular Item */}
         <PopularItem />
+
         {/* customer reviews */}
-        <CustomerReviews/>
+        <CustomerReviews />
       </section>
 
     </>

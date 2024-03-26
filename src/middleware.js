@@ -1,22 +1,29 @@
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
+import { PUBLIC_ROUTES } from "../lib/routes";
 
 export default withAuth(
     function middleware(req) {
-        const { pathname, origin } = req.nextUrl;
-        console.log(req.nextauth.token,origin, 'anks')
+        const { nextUrl } = req;
+        const { pathname, origin } = nextUrl;
+        const isLoggedIn = req.nextauth.token;
+        const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
 
-        if (req.nextUrl.pathname.startsWith("/shop")) {
-            return NextResponse.next();
-        }else{
+        console.log(req.nextauth.token, origin, 'anks', pathname)
+
+        if (isPublicRoute) {
             return NextResponse.next();
         }
+
+        if (!isPublicRoute && !isLoggedIn) {
+            return Response.redirect(new URL("/signin", nextUrl));
+        }
+        console.log( 'rrrr')
+       // return NextResponse.next();
     },
     {
         callbacks: {
-            authorized: ({ token }) => {
-                return token
-            },
+            authorized: ({ token }) => true
         },
         pages: {
             signIn: '/signin',

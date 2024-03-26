@@ -3,8 +3,10 @@ import luxuriousBag2 from '../../../../public/images/shop/luxurious-bag2.jpg';
 import smartWatch from '../../../../public/images/categories/smart-watch.jpg';
 import { BsCart3 } from "react-icons/bs";
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
 
 const CartListDropdown = () => {
+    const cartCount = useSelector(state => state.common.cartCount);
     const [cartToggle, setCartToggle] = useState(false);
     const cartDropdownRef = useRef(null);
     const cartButtonRef = useRef(null);
@@ -30,6 +32,9 @@ const CartListDropdown = () => {
                 ref={cartButtonRef}
                 type="button"
             >
+                {cartCount > 0 && (
+                    <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-gray-900 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">{cartCount}</div>
+                )}
                 <BsCart3 className="h-4 w-4" />
             </button>
             <div

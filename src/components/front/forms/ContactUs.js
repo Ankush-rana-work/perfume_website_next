@@ -2,7 +2,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { contactUsSchema } from '../../../../validation/contactUsSchema';
-import { loginActions } from '../../../../lib/serverActions/authActions';
+import { loginActions } from '../../../../lib/serverActions/homeActions';
 import useSWR from 'swr'
 import { useListQuery } from '../../../../lib/rtk/api/productApi';
 

@@ -4,7 +4,7 @@ import luxuriousBag2 from '../../../public/images/shop/luxurious-bag2.jpg';
 import ladiesSkirtPair from '../../../public/images/shop/ladies-skirt-pair.jpg';
 import smartWatch2 from '../../../public/images/shop/smart-watch.jpg';
 import sandalFootware from '../../../public/images/shop/white-sandals-summer-footwear.jpg';
-import {  FaRegHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { CgPentagonUp } from "react-icons/cg";
 import { IoMdStar } from "react-icons/io";
@@ -12,21 +12,13 @@ import { IoMdStar } from "react-icons/io";
 const PopularItem = () => {
     return (
         <div className="container relative md:mt-24 mt-16">
-            <div className="grid items-end md:grid-cols-2 mb-6">
-                <div className="md:text-start text-center">
-                    <h5 className="font-semibold text-3xl leading-normal mb-4">
-                        Popular Items
-                    </h5>
-                    <p className="text-slate-400 max-w-xl">Popular items in this week</p>
-                </div>
-                <div className="md:text-end">
-                    <a
-                        href="shop-grid.html"
-                        className="text-slate-400 hover:text-orange-500"
-                    >
-                        See More Items <i className="mdi mdi-arrow-right" />
-                    </a>
-                </div>
+            <div className="grid grid-cols-1 justify-center text-center mb-6">
+                <h5 className="font-semibold text-3xl leading-normal mb-4">
+                    Popular Items
+                </h5>
+                <p className="text-slate-400 max-w-xl mx-auto">
+                    Popular items in this week
+                </p>
             </div>
             {/*end grid*/}
             <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-6 gap-6">

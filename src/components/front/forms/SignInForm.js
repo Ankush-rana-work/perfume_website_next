@@ -32,7 +32,8 @@ const SignInForm = () => {
             if(loginResponse.ok){
                 toast.dismiss();
                 // Redirect to a specific page after successful sign-in
-                router.push('/');
+               // router.push('/');
+               window.location.href = "/";
             }else{
                 toast.dismiss();
                 toast.error('Invalid user email and password');

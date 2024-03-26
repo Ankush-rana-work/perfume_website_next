@@ -10,7 +10,7 @@ export const authOptions = {
             },
             async authorize(credentials, req) {
                 await new Promise(r => setTimeout(r, 1000));
-                const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
+                const user = { id: "1", name: "J Smith", email: "jsmith@example.com", role: "admin" }
                 if (user) {
                     return user
                 } else {
@@ -19,6 +19,17 @@ export const authOptions = {
             }
         })
     ],
+    callbacks: {
+        async jwt({ token, user, account, profile, isNewUser }) {
+            if (user) {
+                token.user = user;
+            }
+            return token
+        },
+        async session({ session, user, token }) {
+            return session
+        }
+    },
     pages: {
         signIn: '/signin',
     }
